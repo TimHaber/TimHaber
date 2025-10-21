@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vorname Nachname – Startseite</title>
+  <meta name="description" content="Persönliche Startseite von Vorname Nachname: Kurzvorstellung, Lebenslauf, Projekte & Links." />
+  <style>
+    :root{
+      --bg:#ffffff;--text:#0b0b0c;--muted:#4a4d57;--accent:#0a7cff;
+      --surface:#f4f6f8;--border:#d6d8dd;--shadow:0 6px 18px rgba(0,0,0,.06);
+      --radius:14px;--maxw:72rem;--leading:1.6;
+    }
+    @media(prefers-color-scheme:dark){
+      :root{
+        --bg:#0f1115;--text:#f5f7fa;--muted:#b8bdc7;--accent:#7bb1ff;
+        --surface:#171a21;--border:#2a2f3a;--shadow:0 8px 24px rgba(0,0,0,.35);
+      }
+    }
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/var(--leading) system-ui,Segoe UI,Roboto,Helvetica Neue,Arial;}
+    a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;}
+    a:hover{text-decoration-thickness:2px;}
+    .wrap{max-width:var(--maxw);margin-inline:auto;padding:clamp(16px,2.5vw,32px);}
+    header.site{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem;}
+    nav a{padding:.4rem .7rem;background:var(--surface);border:1px solid var(--border);border-radius:999px;text-decoration:none;}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(16px,3vw,32px);align-items:start;margin-bottom:2rem;}
+    .hero h1{font-size:clamp(1.8rem,2.8vw,2.6rem);line-height:1.2;margin:0 0 .5rem;}
+    figure.portrait{margin:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
+    figure.portrait img{width:100%;height:auto;display:block;}
+    figure.portrait figcaption{padding:.6rem .9rem;font-size:.95rem;color:var(--muted);border-top:1px solid var(--border);}
+    .cv{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:.5rem;margin-bottom:2rem;overflow-x:auto;}
+    .cv table{width:100%;border-collapse:collapse;min-width:560px;}
+    .cv th,.cv td{padding:.6rem .75rem;border-bottom:1px solid var(--border);text-align:left;}
+    .cv th{font-weight:700;}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2.2vw,22px);}
+    .card a{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+    .card img{width:100%;height:160px;object-fit:cover;display:block;}
+    .card h3{margin:.85rem .9rem .25rem;font-size:1.1rem;color:var(--text);}
+    .card p{margin:0 .9rem 1rem;color:var(--muted);}
+    footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--muted);font-size:.95rem;}
+    @media(max-width:720px){.hero{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.card img{height:200px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site">
+      <div>
+        <strong>Tim Haber</strong><br>
+        <span class="lede">Dualer Student · Geoinformatik und Vermessung</span>
+      </div>
+      <nav aria-label="Hauptnavigation">
+        <a href="#about">Über mich</a>
+        <a href="#cv">Kurz-CV</a>
+        <a href="#projekte">Beispiel-Projekte</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="about" class="hero">
+        <div>
+          <h1>Hallo, ich bin Tim Haber.</h1>
+          <p>Ich bin derzeit Dualer Student an der Hochschule Mainz im Fachgebiet Geoinformatik und Vermessung.
+             Ich bin an der Informatik sehr interessiert und strebe nach dem Studium den Beruf des Vermessungsoberinspektors an.</p>
+          <p>Auf dieser Seite findest du meinen Kurzlebenslauf und Links zu weiteren Projekten.</p>
+        </div>
+        <figure class="portrait">
+          <img src="../TimHaber/platzhalterfoto.webp" alt="Platzhalter für Porträt von Tim Haber" width="800" height="1000">
+          <figcaption>Foto: © Tim Haber</figcaption>
+        </figure>
+      </section>
+
+      <section id="cv" class="cv">
+        <table>
+          <thead>
+            <tr><th>Jahr(e)</th><th>Station</th><th>Ort</th><th>Stichwort</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2023–heute</td><td>Dualer Student</td><td>Mainz</td><td>Duales Studium G&V</td></tr>
+            <tr><td>2014–2023</td><td>Schüler</td><td>Montabaur</td><td>Gymnasium</td></tr>
+            <tr><td>2010–2014</td><td>Schüler</td><td>Diez</td><td>Grundschule</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="projekte" aria-labelledby="proj-heading">
+        <h2 id="proj-heading">Ausgewählte Links</h2>
+        <ul class="gallery" role="list">
+          <li class="card">
+            <a href="https://github.com/TimHaber" target="_blank" rel="noopener noreferrer"
+               aria-label="Zu meinem GitHub-Profil (öffnet in neuem Tab)">
+              <img src="https://picsum.photos/600/400?random=1" alt="Symbolbild Code und Repositorys">
+              <h3>GitHub</h3>
+              <p>Meine öffentlichen Repositories und Open-Source-Beiträge.</p>
+            </a>
+          </li>
+          <li class="card">
+            <a href="https://github.com/TimHaber/TimHaber" target="_blank" rel="noopener noreferrer"
+               aria-label="Zu meinem Portfolio (öffnet in neuem Tab)">
+              <img src="https://picsum.photos/600/400?random=2" alt="Symbolbild Design-Portfolio">
+              <h3>Portfolio</h3>
+              <p>Ausgewählte Arbeiten und Projekte im Bereich Produkt- und UX-Design.</p>
+            </a>
+          </li>
+          <li class="card">
+            <a href="https://github.com/TimHaber/TimHaber" target="_blank" rel="noopener noreferrer"
+               aria-label="Zu meinem Fotoblog (öffnet in neuem Tab)">
+              <img src="https://picsum.photos/600/400?random=3" alt="Symbolbild Fotografie">
+              <h3>Fotoblog</h3>
+              <p>Meine fotografischen Serien und Experimente mit Licht und Farbe.</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        © 2025 Tim Haber · <a href="mailto:ich@example.com">tim.haber@students.hs-mainz.de</a>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
